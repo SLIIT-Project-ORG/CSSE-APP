@@ -1,5 +1,8 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
+import Order from './src/screens/AddOrder';
+import WareHouse from './src/screens/AddWarehouse';
+import AdminPanel from './src/screens/AdminPage';
 import HomePage from './src/screens/HomePage';
 import Login from './src/screens/Login';
 
@@ -28,8 +31,17 @@ export default function App() {
       <ProfileSettings/>
     </View>,
     <View>
-      <Purchase/>
+      <AdminPanel/>
+    </View>,
+    <View>
+      <Order/>
+    </View>,
+    <View>
+      <WareHouse/>
     </View>
+    // <View>
+    //   <Purchase/>
+    // </View>
   );
 }
 
