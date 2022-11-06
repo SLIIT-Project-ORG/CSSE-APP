@@ -5,7 +5,7 @@ import AppBarComponent from '../other/AppBarComponent'
 import xperts from '../../assets/xperts.png'
 
 
-function StartPage() {
+function StartPage({navigation}) {
   return (
     
     <SafeAreaView style={{felix: 1}}>
@@ -24,7 +24,13 @@ function StartPage() {
 
         <View>
             <TouchableOpacity style={Styles.defaultButton} >
-                <Text style={{fontWeight:'bold' , fontSize:25, color:'white' ,textAlign:'center'}}>GET STARTED</Text>
+                <Text
+                
+                onPress={() =>
+                  navigation.navigate('AdminPanel')
+                }
+                style={{fontWeight:'bold' , fontSize:25, color:'white' ,textAlign:'center'}}>GET STARTED</Text>
+                
             </TouchableOpacity>
         </View>
 

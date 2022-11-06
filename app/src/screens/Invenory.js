@@ -17,12 +17,12 @@ import {
 
 import { Card, ListItem, Button, Icon } from "react-native-elements";
 
-const Managewarehouse = ({navigation}) => {
+const ManageInventory = ({navigation}) => {
   const [videodetails, setvideodetails] = useState([]);
   const [searchData, setSearchData] = useState("");
   useEffect(() => {
     axios
-      .get(`http://localhost:4000/warehouse/`)
+      .get(`http://localhost:4000/inventory/`)
       .then((videodetails) => {
         setvideodetails(videodetails.data);
         console.log(videodetails.data);
@@ -34,7 +34,7 @@ const Managewarehouse = ({navigation}) => {
 
   function deletevideo(id) {
     axios
-      .delete(`http://localhost:4000/warehouse/delete/${id}`)
+      .delete(`http://localhost:4000/inventory/delete/${id}`)
       .then(() => {
         alert("Deleted Successfully");
       })
@@ -73,7 +73,7 @@ const Managewarehouse = ({navigation}) => {
         <Text style={styles.myTitle}>Xpert</Text>
       </View>
       <View style={styles.container}>
-        <Text style={styles.myTitle2}>Manage WareHouse</Text>
+        <Text style={styles.myTitle2}>Manage Inventory</Text>
       </View>
       <View style={styles.container}>
         <TextInput
@@ -100,12 +100,12 @@ const Managewarehouse = ({navigation}) => {
             return (
               <View style={styles.container}>
                 <Card>
+                  <Card.Title>warehouse id:{val. warehouse_id}</Card.Title>
                   
-                  <Card.Title>Name: {val. warehouse_name}</Card.Title>
-                  
-                  <Text style={{ marginBottom: 10 }}>Address: {val.warehouse_address}</Text>
-                  <Text style={{ marginBottom: 10 }}>Company: {val.warehouse_company}</Text>
-                  <Text style={{ marginBottom: 10 }}>Contact: {val.warehouse_contactno}</Text>
+                  <Text style={{ marginBottom: 10 }}>Type: {val.inventory_type}</Text>
+                  <Text style={{ marginBottom: 10 }}>Location: {val.inventory_location}</Text>
+                  <Text style={{ marginBottom: 10 }}>Name: {val.inventory_name}</Text>
+                  <Text style={{ marginBottom: 10 }}>Description: {val.inventory_description}</Text>
                   <Button
                     buttonStyle={{
                       backgroundColor: "gray",
@@ -195,4 +195,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Managewarehouse;
+export default ManageInventory;
