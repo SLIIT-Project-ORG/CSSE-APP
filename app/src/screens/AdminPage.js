@@ -74,12 +74,6 @@ const AdminPanel = ({navigation}) => {
             </View>
 
             <View>
-            <TouchableOpacity style={Styles.defaultButton1} >
-                <Text style={{fontWeight:'bold' , fontSize:20, color:'white' ,textAlign:'center'}}>Inventry Management</Text>
-            </TouchableOpacity>
-            </View>
-           
-            <View>
             <TouchableOpacity style={Styles.defaultButton2} >
                 <Text style={{fontWeight:'bold' , fontSize:20, color:'white' ,textAlign:'center'}}>Payment Management</Text>
             </TouchableOpacity>

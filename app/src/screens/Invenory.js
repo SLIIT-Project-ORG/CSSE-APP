@@ -90,7 +90,8 @@ const ManageInventory = ({navigation}) => {
             if (searchData == "") {
               return value;
             } else if (
-              value.warehouse_name.toLowerCase().includes(searchData.toLowerCase())
+              value.inventory_type.toLowerCase().includes(searchData.toLowerCase())||
+              value.inventory_location.toLowerCase().includes(searchData.toLowerCase())
             ) {
               return value;
             }
